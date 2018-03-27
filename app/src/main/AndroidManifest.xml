@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ir.loper.neginsabz">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".Network.AppController"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Activity.SignIn"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.SignUp" />
+
+
+        <activity android:name=".Activity.MainActivity">
+
+
+        </activity>
+
+
+        <activity android:name=".Activity.ProfileActivity" />
+        <activity android:name=".Activity.MazayaActivity" />
+        <activity android:name=".Activity.DetailActivity" />
+        <activity android:name=".Activity.AmozeshActivity" />
+
+        <service
+            android:name=".Service.BackgroundSoundService"
+            android:enabled="true" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="fa9f25f2d0b1f715fc826f6e31dea306fdd50d01" />
+
+        <activity android:name=".Activity.AboutActivity" />
+        <activity android:name=".Activity.ContactUsActivity" />
+        <activity android:name=".Activity.ForoshgahActivity" />
+        <activity android:name=".Activity.WebActivity"></activity>
+    </application>
+
+</manifest>

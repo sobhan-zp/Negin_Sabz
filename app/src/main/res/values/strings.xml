@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">نگین سبز</string>
+    <string name="signup"><b><u>ثبت نام کنید</u></b></string>
+
+    <string name="signin"><u><b>ورود</b></u></string>
+    <string name="tandc"><u>قوانین نگین سبز</u></string>
+    <string name="quiz">کدام یک از گوشت ها مفید تر است؟</string>
+    <string name="profile">پروفایل من</string>
+    <string name="about_app">درباره نگین سبز</string>
+    <string name="site_app">مشاهده سایت نگین سبز</string>
+    <string name="about_app_text">شرکت بازرگانی نگین سبز سلامت مروارید با رویکرد تولید، پرورش، توزیع، خرید وفروش، واردات، صادرات، بسته بندی وقطعه بندی فراوری های پروتئینی از جمله بوقلمون ، شتر مرغ و مرغ گوشتی و همچنین اخذواعطای نمایندگی به شرکتها وموسسات داخلی و خارجی مرتبط با دام وطیور و آبزیان تاسیس یافت.</string>
+
+
+    <string name="lname">نام: </string>
+    <string name="fname">نام خانوادگی: </string>
+    <string name="username">نام کاربری: </string>
+    <string name="email">ایمیل: </string>
+    <string name="mobile">موبایل: </string>
+    <string name="age">سن: </string>
+    <string name="city">شهر: </string>
+
+
+    <string name="name_masjed">نام مسجد : </string>
+    <string name="Address_masjed">آدرس : </string>
+    <string name="history_create">تاریخ احداث : </string>
+    <string name="motavaliyan">متولیان، خادمین و هیأت امنا : </string>
+    <string name="aeme">ائمه جمعه : </string>
+    <string name="location">موقعیت بنا در شهر و محله : </string>
+    <string name="befor_history">پیشینه‌ی تاریخی بنا : </string>
+
+
+</resources>

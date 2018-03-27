@@ -1,0 +1,53 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="text">15dp</dimen>
+    <dimen name="textsub">12dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+
+    <dimen name="detail_backdrop_height">256dp</dimen>
+    <dimen name="card_margin">16dp</dimen>
+    <dimen name="list_item_avatar_size">40dp</dimen>
+
+
+
+
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+
+    <!-- Font Size -->
+    <dimen name="font_xxsmall">10sp</dimen>
+    <dimen name="font_small">13sp</dimen>
+    <dimen name="font_medium">18sp</dimen>
+    <dimen name="font_large">22sp</dimen>
+    <dimen name="font_xlarge">26sp</dimen>
+
+    <!-- Padding Size -->
+    <dimen name="padding_small">5dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_large">10dp</dimen>
+
+    <!-- Space Size -->
+    <dimen name="dimen_xsmall">5dp</dimen>
+    <dimen name="dimen_small">10dp</dimen>
+    <dimen name="dimen_medium">20dp</dimen>
+    <dimen name="dimen_large">40dp</dimen>
+    <dimen name="dimen_xlarge">45dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="padding_xlarge">20dp</dimen>
+    <dimen name="padding_xsmall">3dp</dimen>
+    <dimen name="padding_bit">3dp</dimen>
+    <dimen name="item_tein">115dp</dimen>
+    <dimen name="item_height">88dp</dimen>
+
+    <dimen name="image_width">110dp</dimen>
+    <dimen name="image_small_width">32dp</dimen>
+
+
+
+
+
+</resources>
