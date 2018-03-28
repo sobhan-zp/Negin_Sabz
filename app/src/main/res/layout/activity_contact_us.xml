@@ -84,7 +84,7 @@
                     <com.github.leonardoxh.customfont.FontText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="شعبه سوم"
+                        android:text="شعبه دوم"
                         android:textSize="16dp"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title"
                         app:font="bsans" />
