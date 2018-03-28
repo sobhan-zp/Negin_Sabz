@@ -136,7 +136,11 @@ MainActivity extends AppCompatActivity implements View.OnClickListener {
         spaceNavigationView.setSpaceOnClickListener(new SpaceOnClickListener() {
             @Override
             public void onCentreButtonClick() {
-                if (!AppController.IS_LOAD_QUESTION) return;
+                if (!AppController.IS_LOAD_QUESTION) {
+                    Toast.makeText(MainActivity.this, "زمان مسابقه به پایان رسید", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
 
 
                 TextView txtclose, dialog_txt;

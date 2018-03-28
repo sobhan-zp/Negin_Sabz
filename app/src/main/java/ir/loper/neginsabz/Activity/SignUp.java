@@ -30,6 +30,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 import io.fabric.sdk.android.Fabric;
 import ir.loper.neginsabz.Network.AppController;
@@ -43,11 +44,15 @@ public class SignUp extends AppCompatActivity {
     ArrayList<String> city;
     ArrayAdapter adapter;
     TextView txt_signin_singup;
-    EditText name_singup, user_singup, email_singup, mobile_singup , age_singup, pass_singup;
+    EditText name_singup, user_singup, email_singup, mobile_singup, age_singup, pass_singup;
     Button btn_create_singup;
     Spinner spCity;
     ProgressDialog dialog;
     SavePref save;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,51 +85,56 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(! isNetworkAvailable()) {
-                    AppController.message(SignUp.this ,"لطفا اتصال به اینترنت خود را برسی کنید");
+                if (!isNetworkAvailable()) {
+                    AppController.message(SignUp.this, "لطفا اتصال به اینترنت خود را برسی کنید");
                     return;
                 }
 
 
-                if(name_singup.getText().toString().length() <= 1) {
+                if (name_singup.getText().toString().length() <= 1) {
 
                     AppController.message(SignUp.this, "لطفا نام خود را وارد کنید");
                     name_singup.requestFocus();
                     return;
 
-                }else if(user_singup.getText().toString().length() <= 1){
+                } else if (user_singup.getText().toString().length() <= 1) {
 
                     AppController.message(SignUp.this, "لطفا نام کاربری را وارد کنید");
                     user_singup.requestFocus();
                     return;
-                }/*else if(!AppController.isValidEmail(email_singup.getText().toString())){
+                } else if (email_singup.getText().toString().length() > 0  && !AppController.isValidEmail(email_singup.getText().toString())) {
 
-                    AppController.message(SignUp.this, "لطفا ایمیل را وارد کنید");
-                    email_singup.requestFocus();
-                    return;
-                }*/else if(mobile_singup.getText().toString().length() <= 1){
 
-                    AppController.message(SignUp.this, "لطفا شماره موبایل را وارد کنید");
+                        AppController.message(SignUp.this, "لطفا ایمیل را درست وارد کنید");
+                        email_singup.requestFocus();
+                        return;
+
+
+
+                } else if (!mobile_singup.getText().toString().matches("(\\+98|0)?9\\d{9}")) {
+
+
+                    AppController.message(SignUp.this, "لطفا شماره موبایل را درست وارد کنید");
                     mobile_singup.requestFocus();
                     return;
-                }else if(age_singup.getText().toString().length() <= 1){
+                } else if (age_singup.getText().toString().length() <= 1) {
 
                     AppController.message(SignUp.this, "لطفا سن خود را وارد کنید");
                     age_singup.requestFocus();
                     return;
-                }else if(pass_singup.getText().toString().length() <= 1){
+                } else if (pass_singup.getText().toString().length() <= 1) {
 
                     AppController.message(SignUp.this, "لطفا رمزعبور را وارد کنید");
                     pass_singup.requestFocus();
                     return;
-                }else {
+                } else {
 
                     save.save(AppController.SAVE_USER_FULLNAME, name_singup.getText().toString());
                     save.save(AppController.SAVE_USER_EMAIL, email_singup.getText().toString());
                     save.save(AppController.SAVE_USER_USERNAME, user_singup.getText().toString());
                     save.save(AppController.SAVE_USER_MOBILE, mobile_singup.getText().toString());
-                    save.save(AppController.SAVE_USER_MOBILE, age_singup.getText().toString());
-                    save.save(AppController.SAVE_USER_CITY, String.valueOf(spCity.getSelectedItemPosition() + 1));
+                    save.save(AppController.SAVE_USER_AGE, age_singup.getText().toString());
+                    save.save(AppController.SAVE_USER_CITY, String.valueOf(spCity.getSelectedItemPosition()));
 
                     dialog.setMessage("ورود...");
                     dialog.show();
@@ -145,7 +155,7 @@ public class SignUp extends AppCompatActivity {
         fillcity();
     }
 
-    private void signup(String fullname,String uname, String email, String mobile , String age, String pass, String city) {
+    private void signup(String fullname, String uname, String email, String mobile, String age, String pass, String city) {
 
         Map<String, String> params = new HashMap<>();
         params.put("fullname", fullname);
@@ -163,18 +173,18 @@ public class SignUp extends AppCompatActivity {
                 //Log.d("TAG--------OK", resp.toString());
 
                 try {
-                    if(resp.getString("status").equals("200")){
+                    if (resp.getString("status").equals("200")) {
 
                         save.save(AppController.SAVE_LOGIN, "1");
                         save.save(AppController.SAVE_USER_ID, resp.getString("id"));
 
                         AppController.message(SignUp.this, "ثبت نام انجام شد");
-                        startActivity(new Intent(SignUp.this , MainActivity.class));
+                        startActivity(new Intent(SignUp.this, MainActivity.class));
                         finish();
 
-                    }else if (resp.getString("status").equals("204")){
+                    } else if (resp.getString("status").equals("204")) {
                         AppController.message(SignUp.this, "کاربری تکراری می باشد");
-                    }else if (resp.getString("status").equals("206")){
+                    } else if (resp.getString("status").equals("206")) {
                         AppController.message(SignUp.this, "خطا در سرور لطفا بعدا سعی کنید");
                     }
                 } catch (JSONException e) {
@@ -188,12 +198,12 @@ public class SignUp extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 Log.d("TAG--------Error", "Error: " + error.getMessage());
                 AppController.message(SignUp.this, "لطفا در زمان دیگری اقدام کنید");
-                if (dialog.isShowing())  dialog.dismiss();
+                if (dialog.isShowing()) dialog.dismiss();
             }
         });
         jsonObjReq.setShouldCache(false);
         //myRequestQueue.getCache().clear();
-        AppController.getInstance().addToRequestQueue(jsonObjReq,"REGISTER");
+        AppController.getInstance().addToRequestQueue(jsonObjReq, "REGISTER");
 
     }
 
@@ -206,53 +216,53 @@ public class SignUp extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spCity.setAdapter(adapter);
 
-        city.add ("آستارا");
-        city.add ("آستانه اشرفیه");
-        city.add ("املش");
-        city.add ("بندر انزلی");
-        city.add ("تالش");
-        city.add ("رشت");
-        city.add ("رضوان‌شهر");
-        city.add ("رودسر");
-        city.add ("رودبار");
-        city.add ("شفت");
-        city.add ("صومعه‌سرا");
-        city.add ("فومن");
-        city.add ("کوچصفهان");
-        city.add ("لاهیجان");
-        city.add ("لنگرود");
-        city.add ("ماسال");
-        city.add ("آذربايجان شرقي");
-        city.add ("آذربايجان غربي");
-        city.add ("اردبيل");
-        city.add ("اصفهان");
-        city.add ("البرز");
-        city.add ("ايلام");
-        city.add ("بوشهر");
-        city.add ("تهران");
-        city.add ("چهارمحال بختياري");
-        city.add ("خراسان جنوبي");
-        city.add ("خراسان رضوي");
-        city.add ("خراسان شمالي");
-        city.add ("خوزستان");
-        city.add ("زنجان");
-        city.add ("سمنان");
-        city.add ("سيستان و بلوچستان");
-        city.add ("فارس");
-        city.add ("قزوين");
-        city.add ("قم");
-        city.add ("كردستان");
-        city.add ("كرمان");
-        city.add ("كرمانشاه");
-        city.add ("كهكيلويه و بويراحمد");
-        city.add ("گلستان");
-        city.add ("گيلان");
-        city.add ("لرستان");
-        city.add ("مازندران");
-        city.add ("مركزي");
-        city.add ("هرمزگان");
-        city.add ("همدان");
-        city.add ("يزد");
+        city.add("آستارا");
+        city.add("آستانه اشرفیه");
+        city.add("املش");
+        city.add("بندر انزلی");
+        city.add("تالش");
+        city.add("رشت");
+        city.add("رضوان‌شهر");
+        city.add("رودسر");
+        city.add("رودبار");
+        city.add("شفت");
+        city.add("صومعه‌سرا");
+        city.add("فومن");
+        city.add("کوچصفهان");
+        city.add("لاهیجان");
+        city.add("لنگرود");
+        city.add("ماسال");
+        city.add("آذربايجان شرقي");
+        city.add("آذربايجان غربي");
+        city.add("اردبيل");
+        city.add("اصفهان");
+        city.add("البرز");
+        city.add("ايلام");
+        city.add("بوشهر");
+        city.add("تهران");
+        city.add("چهارمحال بختياري");
+        city.add("خراسان جنوبي");
+        city.add("خراسان رضوي");
+        city.add("خراسان شمالي");
+        city.add("خوزستان");
+        city.add("زنجان");
+        city.add("سمنان");
+        city.add("سيستان و بلوچستان");
+        city.add("فارس");
+        city.add("قزوين");
+        city.add("قم");
+        city.add("كردستان");
+        city.add("كرمان");
+        city.add("كرمانشاه");
+        city.add("كهكيلويه و بويراحمد");
+        city.add("گلستان");
+        city.add("گيلان");
+        city.add("لرستان");
+        city.add("مازندران");
+        city.add("مركزي");
+        city.add("هرمزگان");
+        city.add("همدان");
+        city.add("يزد");
 
         adapter.notifyDataSetChanged();
     }

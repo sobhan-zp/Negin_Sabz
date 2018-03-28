@@ -41,6 +41,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="شعبه اول"
+                        android:textSize="16dp"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title"
                         app:font="bsans" />
 
@@ -50,7 +51,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:text="بلوار امام خمینی. بعد از سه راه باهنر.جنب بانک ملی( پروتئینی نگین سبز)"
-                        android:textSize="17sp"
+                        android:textSize="15sp"
                         app:font="esans" />
 
 
@@ -72,49 +73,6 @@
                 android:id="@+id/card_3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@id/card_2"
-                android:layout_margin="@dimen/card_margin">
-
-                <LinearLayout
-                    style="@style/Widget.CardContent"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <com.github.leonardoxh.customfont.FontText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="شعبه دوم"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                        app:font="bsans" />
-
-                    <com.github.leonardoxh.customfont.FontText
-                        android:id="@+id/tv_text3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="فروشگاه زنجیره ای نجم سبزه میدان (غرفه نگین سبز)"
-                        android:textSize="17sp"
-                        app:font="esans" />
-
-
-                    <com.github.leonardoxh.customfont.FontText
-                        android:id="@+id/tv_phone_text3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="013-33244372"
-                        android:textSize="17sp"
-                        app:font="esans" />
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/card_2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
                 android:layout_below="@id/card_1"
                 android:layout_margin="@dimen/card_margin">
 
@@ -127,6 +85,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="شعبه سوم"
+                        android:textSize="16dp"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title"
                         app:font="bsans" />
 
@@ -136,22 +95,25 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:text="پروتئینی نگین سبز واقع در بلوار شهید قلی پور . بعد از پل هوایی گلزاران. نرسیده به میدان جهاد . نبش خیابان احسان"
-                        android:textSize="17sp"
+                        android:textSize="15sp"
                         app:font="esans" />
 
 
-                    <!--<com.github.leonardoxh.customfont.FontText
+                    <com.github.leonardoxh.customfont.FontText
                         android:id="@+id/tv_phone_text2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="013-33827253"
+                        android:text="013-33584448"
                         android:textSize="17sp"
-                        app:font="esans" />-->
+                        app:font="esans" />
 
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
+
+
+
 
 
         </LinearLayout>

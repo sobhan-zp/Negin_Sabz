@@ -185,6 +185,7 @@
                         android:drawablePadding="12dp"
                         android:textDirection="ltr"
                         android:hint="موبایل"
+                        android:maxLength="12"
                         android:inputType="phone"
                         android:lines="1"
                         android:padding="14dp"

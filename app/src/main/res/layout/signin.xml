@@ -252,18 +252,7 @@
                         />
                 </LinearLayout>
 
-                <customfonts.MyTextView
-                    android:id="@+id/or"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_above="@+id/linear"
-                    android:gravity="center"
-                    android:lines="1"
-                    android:text="یا"
-                    android:textColor="@color/textSub"
 
-
-                    />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
