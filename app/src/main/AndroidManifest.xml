@@ -18,19 +18,24 @@
         <activity
             android:name=".Activity.SignIn"
             android:screenOrientation="portrait">
+
+
+
+        </activity>
+
+
+
+        <activity android:name=".Activity.SignUp" />
+        <activity android:name=".Activity.MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".Activity.SignUp" />
-
-
-        <activity android:name=".Activity.MainActivity">
-
 
         </activity>
+
 
 
         <activity android:name=".Activity.ProfileActivity" />
@@ -49,7 +54,7 @@
         <activity android:name=".Activity.AboutActivity" />
         <activity android:name=".Activity.ContactUsActivity" />
         <activity android:name=".Activity.ForoshgahActivity" />
-        <activity android:name=".Activity.WebActivity"></activity>
+        <activity android:name=".Activity.WebActivity" />
     </application>
 
 </manifest>

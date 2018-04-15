@@ -530,7 +530,7 @@ MainActivity extends AppCompatActivity implements View.OnClickListener {
                     if (resp.getString("status").equals("200")) {
 
                         save.save(AppController.SAVE_LAST_ANSVER_ID, resp.getString("id"));
-                        AppController.message(MainActivity.this, "انتخاب شما ارسال شد و در قرعه کشی شرکت داده می شوید", Toast.LENGTH_LONG);
+                        AppController.message(MainActivity.this, "انتخاب شما ارسال شد ", Toast.LENGTH_LONG);
 
                     } else if (resp.getString("status").equals("205")) {
                         AppController.message(MainActivity.this, "شما قبلا در مسابقه شرکت کرده اید");
