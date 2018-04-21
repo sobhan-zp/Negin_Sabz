@@ -47,6 +47,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import io.fabric.sdk.android.Fabric;
+import ir.loper.neginsabz.Firebase.MFirebaseMessagingService;
 import ir.loper.neginsabz.Network.AppController;
 import ir.loper.neginsabz.Network.CustomRequest;
 import ir.loper.neginsabz.Network.SavePref;
@@ -87,6 +88,8 @@ MainActivity extends AppCompatActivity implements View.OnClickListener {
         myDialog = new Dialog(this);
         save = new SavePref(this);
         dialog = new ProgressDialog(this);
+
+
 
         findView();
         ansver();
@@ -393,6 +396,9 @@ MainActivity extends AppCompatActivity implements View.OnClickListener {
         li_site_profil.setOnClickListener(this);
 
     }
+
+
+
 
 
     public void onClick(View v) {
