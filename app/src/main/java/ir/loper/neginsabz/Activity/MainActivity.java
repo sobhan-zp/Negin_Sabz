@@ -47,7 +47,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import io.fabric.sdk.android.Fabric;
-import ir.loper.neginsabz.Firebase.MFirebaseMessagingService;
 import ir.loper.neginsabz.Network.AppController;
 import ir.loper.neginsabz.Network.CustomRequest;
 import ir.loper.neginsabz.Network.SavePref;

@@ -4,7 +4,6 @@ package ir.loper.neginsabz.Data;
 import java.util.ArrayList;
 
 import ir.loper.neginsabz.Model.ForoshgahModel;
-import ir.loper.neginsabz.Model.MazayaModel;
 import ir.loper.neginsabz.R;
 
 

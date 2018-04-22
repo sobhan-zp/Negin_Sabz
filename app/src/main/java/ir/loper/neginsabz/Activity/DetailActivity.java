@@ -21,7 +21,6 @@ import com.github.leonardoxh.customfont.FontText;
 import java.lang.reflect.Field;
 
 import ir.loper.neginsabz.Model.MazayaModel;
-import ir.loper.neginsabz.Network.AppController;
 import ir.loper.neginsabz.R;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 

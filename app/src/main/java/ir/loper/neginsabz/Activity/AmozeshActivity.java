@@ -20,11 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ir.loper.neginsabz.Adapter.AmozeshRecyclerAdapter;
-import ir.loper.neginsabz.Adapter.MazayaRecyclerAdapter;
 import ir.loper.neginsabz.Data.Amozesh;
-import ir.loper.neginsabz.Data.Mazaya;
 import ir.loper.neginsabz.Model.AmozeshModel;
-import ir.loper.neginsabz.Model.MazayaModel;
 import ir.loper.neginsabz.R;
 import ir.loper.neginsabz.Service.BackgroundSoundService;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;

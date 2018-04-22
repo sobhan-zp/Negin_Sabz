@@ -16,7 +16,6 @@ import java.util.List;
 
 import ir.loper.neginsabz.Activity.DetailActivity;
 import ir.loper.neginsabz.Model.AmozeshModel;
-import ir.loper.neginsabz.Model.MazayaModel;
 import ir.loper.neginsabz.R;
 
 
