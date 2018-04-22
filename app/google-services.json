@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "147568582141",
+    "firebase_url": "https://negin-sabz.firebaseio.com",
+    "project_id": "negin-sabz",
+    "storage_bucket": "negin-sabz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:147568582141:android:973418c518f99683",
+        "android_client_info": {
+          "package_name": "ir.loper.neginsabz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "147568582141-8mkqgjk8bkbpog0813lsenbvkodbiokr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzeeV4-ojVnQgcDU7t5plOGvApNykSz9k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -45,6 +45,8 @@ public class AppController extends Application {
     public final static String SAVE_USER_CITY = "SAVE_USER_CITY";
     public final static String SAVE_USER_ACTIVE = "SAVE_USER_ACTIVE";
 
+    public final static String SAVE_ENABLE_COMPETENTION = "SAVE_ENABLE_COMPETENTION";
+
 
     public final static String SAVE_LAST_ANSVER_ID = "SAVE_LAST_ANSVER_ID";
 

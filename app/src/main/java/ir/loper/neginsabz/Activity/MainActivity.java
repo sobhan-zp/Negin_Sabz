@@ -76,6 +76,8 @@ MainActivity extends AppCompatActivity implements View.OnClickListener {
     private int dotscount;
     private ImageView[] dots;
 
+    GlideDrawableImageViewTarget imageViewTarget2;
+
 
     boolean show = false;
 
@@ -101,9 +103,9 @@ MainActivity extends AppCompatActivity implements View.OnClickListener {
         ImageView img_gif2_main = (ImageView) findViewById(R.id.img_gif2_main);
 
         GlideDrawableImageViewTarget imageViewTarget = new GlideDrawableImageViewTarget(img_gif_main);
-        GlideDrawableImageViewTarget imageViewTarget2 = new GlideDrawableImageViewTarget(img_gif2_main);
+        imageViewTarget2 = new GlideDrawableImageViewTarget(img_gif2_main);
         Glide.with(this).load(R.raw.down2).into(imageViewTarget);
-        Glide.with(this).load(R.raw.gifquiz).into(imageViewTarget2);
+        Glide.with(this).load(R.raw.gifquiz2).into(imageViewTarget2);
 
 
         //item bottom bar
@@ -138,12 +140,19 @@ MainActivity extends AppCompatActivity implements View.OnClickListener {
         spaceNavigationView.setSpaceOnClickListener(new SpaceOnClickListener() {
             @Override
             public void onCentreButtonClick() {
+
+                if(save.load(AppController.SAVE_ENABLE_COMPETENTION,"0").equals("0")){
+                    Intent telegram = new Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/neginsabzco"));
+                    startActivity(telegram);
+                    return;
+                }
+
+                Glide.with(MainActivity.this).load(R.raw.gifquiz1).into(imageViewTarget2);
+
                 if (!AppController.IS_LOAD_QUESTION) {
                     Toast.makeText(MainActivity.this, "زمان مسابقه به پایان رسید", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
-
 
                 TextView txtclose, dialog_txt;
                 final Button btnFollow, btn_1, btn_2, btn_3;
@@ -580,6 +589,7 @@ MainActivity extends AppCompatActivity implements View.OnClickListener {
                             AppController.question.setQuestion_b(object.getString("question_b"));
                             AppController.question.setQuestion_c(object.getString("question_c"));
                             AppController.question.setAnsver(object.getString("ansver"));
+                            save.save(AppController.SAVE_ENABLE_COMPETENTION, object.getString("enable"));
 
                             AppController.IS_LOAD_QUESTION = true;
 
